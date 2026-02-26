@@ -45,7 +45,6 @@ class MoodEntry(models.Model):
 
     # Outcomes / targets
     mood_score = models.DecimalField(max_digits=5, decimal_places=2)
-    stress_level = models.DecimalField(max_digits=6, decimal_places=3)
 
     created_at = models.DateTimeField(auto_now_add=True)
 
