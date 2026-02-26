@@ -44,7 +44,9 @@ class MoodEntry(models.Model):
     weather = models.CharField(max_length=10, choices=WEATHER_CHOICES)
 
     # Outcomes / targets
-    mood_score = models.DecimalField(max_digits=5, decimal_places=2)
+    mood_score = models.DecimalField(
+        max_digits=5, decimal_places=2, null=True, blank=True
+    )
 
     created_at = models.DateTimeField(auto_now_add=True)
 
