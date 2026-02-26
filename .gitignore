@@ -12,3 +12,5 @@ cloudinary_python.txt
 .venv/
 venv/
 .vscode/
+.qodo/
+.DS_Store
