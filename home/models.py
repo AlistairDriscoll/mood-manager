@@ -50,6 +50,7 @@ class MoodEntry(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self) -> str:
-        who = self.user.username if self.user else "dataset"
-        return f"{who}: mood {self.mood_score}, stress {self.stress_level}"
+    def __str__(self):
+        if self.user:
+            return f"{self.user.username} - {self.created_at.date()}"
+        return f"Dataset entry {self.id}"
