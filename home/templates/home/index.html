@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<h1>Hello World</h1>
+<video autoplay muted loop playsinline class="bg-video">
+  <source src="{% static 'videos/sunset.mp4' %}" type="video/mp4">
+</video>
+<div class="video-overlay"></div>
+
+<div class="content-wrapper">
+<h1 class="mt-5 mb-3 text-white text-center fs-1 fw-bold">Mood Manager</h1>
 <br />
 <br />
 <br />
@@ -9,4 +16,5 @@
 <br />
 <br />
 <br />
+</div>
 {% endblock %}
