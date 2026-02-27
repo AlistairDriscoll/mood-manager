@@ -33,3 +33,19 @@ def predict_view(request):
             "stress_pred": stress_pred,
         },
     )
+
+
+def improve_my_mood(request):
+
+    return render(
+        request,
+        'improve_mood.html',
+    )
+
+
+def reduce_stress(request):
+
+    return render(
+        request,
+        'reduce_stress.html',
+    )
