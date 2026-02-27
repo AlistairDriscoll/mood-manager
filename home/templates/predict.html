@@ -1,43 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Mood & Stress Predictor</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 700px;
-            margin: 40px auto;
-        }
-        h1 {
-            text-align: center;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            font-weight: bold;
-            display: block;
-        }
-        input, select {
-            width: 100%;
-            padding: 6px;
-        }
-        button {
-            margin-top: 20px;
-            padding: 10px;
-            width: 100%;
-            font-size: 16px;
-        }
-        .results {
-            margin-top: 30px;
-            padding: 15px;
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
-<body>
+{% extends 'base.html' %}
 
+{% block content %}
 <h1>Daily Mood & Stress Predictor</h1>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 700px;
+        margin: 40px auto;
+    }
+    h1 {
+        text-align: center;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        font-weight: bold;
+        display: block;
+    }
+    input, select {
+        width: 100%;
+        padding: 6px;
+    }
+    button {
+        margin-top: 20px;
+        padding: 10px;
+        width: 100%;
+        font-size: 16px;
+    }
+    .results {
+        margin-top: 30px;
+        padding: 15px;
+        background-color: #f2f2f2;
+    }
+</style>
 
 <form method="POST">
     {% csrf_token %}
@@ -85,5 +82,4 @@
 </div>
 {% endif %}
 
-</body>
-</html>
+{% endblock %}
