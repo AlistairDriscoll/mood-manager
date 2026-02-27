@@ -35,6 +35,20 @@ def predict_view(request):
     )
 
 
+def improve_my_mood(request):
+
+    return render(
+        request,
+        'improve_mood.html',
+    )
+
+
+def reduce_stress(request):
+
+    return render(
+        request,
+        'reduce_stress.html',
+    )
 def model_overview(request):
     """
     Return the model overview page
