@@ -1,53 +1,105 @@
 {% extends 'base.html' %}
 
+{% block title %}Mood & Stress Predictor{% endblock %}
+
 {% block content %}
-<h1>Daily Mood & Stress Predictor</h1>
+<div class="row justify-content-center">
+  <div class="col-lg-8">
 
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h1 class="h4 mb-3">Daily Mood & Stress Predictor</h1>
+        <p class="text-muted mb-4">Enter today’s habits to predict mood and stress.</p>
 
-<form method="POST">
-    {% csrf_token %}
+        <form method="POST" novalidate>
+          {% csrf_token %}
 
-    {% for field in form %}
-        <div class="form-group">
-            {{ field.label_tag }}
-            {{ field }}
-            {% if field.errors %}
-                <div style="color:red;">{{ field.errors }}</div>
-            {% endif %}
+          <div class="row g-3">
+            {% for field in form %}
+              <div class="col-md-6">
+                <label class="form-label" for="{{ field.id_for_label }}">
+                  {{ field.label }}
+                </label>
+
+                {{ field }}
+
+                {% if field.help_text %}
+                  <div class="form-text">{{ field.help_text }}</div>
+                {% endif %}
+
+                {% if field.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ field.errors|striptags }}
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 mt-4">
+            Predict
+          </button>
+        </form>
+      </div>
+    </div>
+
+    {% if mood_pred is not None %}
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="h5 mb-3">Results</h2>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="p-3 rounded border">
+              <div class="text-muted">Predicted Mood</div>
+              <div class="display-6 mb-1
+                {% if mood_pred >= 7 %}text-success
+                {% elif mood_pred >= 4 %}text-warning
+                {% else %}text-danger
+                {% endif %}">
+                {{ mood_pred|floatformat:2 }}
+              </div>
+              <div class="text-muted">out of 10</div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="p-3 rounded border">
+              <div class="text-muted">Predicted Stress</div>
+              <div class="display-6 mb-1
+                {% if stress_pred >= 7 %}text-danger
+                {% elif stress_pred >= 4 %}text-warning
+                {% else %}text-success
+                {% endif %}">
+                {{ stress_pred|floatformat:2 }}
+              </div>
+              <div class="text-muted">out of 10</div>
+            </div>
+          </div>
         </div>
-    {% endfor %}
 
-    <button type="submit">Predict</button>
-</form>
+      </div>
+    </div>
+    {% endif %}
 
-{% if mood_pred %}
-<div class="results">
-    <h2>Results</h2>
-
-    <p>
-        <strong>Predicted Mood:</strong>
-        <span style="color:
-            {% if mood_pred >= 7 %}green
-            {% elif mood_pred >= 4 %}orange
-            {% else %}red
-            {% endif %};
-        ">
-            {{ mood_pred|floatformat:2 }} / 10
-        </span>
-    </p>
-
-    <p>
-        <strong>Predicted Stress:</strong>
-        <span style="color:
-            {% if stress_pred >= 7 %}red
-            {% elif stress_pred >= 4 %}orange
-            {% else %}green
-            {% endif %};
-        ">
-            {{ stress_pred|floatformat:2 }} / 10
-        </span>
-    </p>
+  </div>
 </div>
-{% endif %}
+{% endblock %}
 
+
+{% block extra_js %}
+<script>
+document.querySelectorAll('input[type="range"]').forEach((slider) => {
+    const valueDisplay = document.createElement("div");
+    valueDisplay.className = "text-end small text-muted";
+    slider.after(valueDisplay);
+
+    const updateValue = () => {
+        valueDisplay.textContent = slider.value;
+    };
+
+    slider.addEventListener("input", updateValue);
+    updateValue();
+});
+</script>
 {% endblock %}
