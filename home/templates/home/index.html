@@ -1,12 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Hello World</h1>
-<br />
-<br />
-<br />
-<a href="/predict">Placeholder link to preict form page</a>
-<br />
-<br />
-<br />
+<div class="landing-hero">
+    <div class="hero-content">
+        <div class="logo-container">
+            <h1 class="logo-text">Mood Manager</h1>
+            <div class="logo-underline"></div>
+        </div>
+        
+        <p class="tagline">
+            Track your emotions, understand your patterns, and improve your mental wellbeing one day at a time.
+        </p>
+        
+        <a href="{% url 'predict' %}" class="cta-button">
+            Track Your Mood Today
+        </a>
+        
+        <p class="subtitle">
+            Start your journey to better emotional awareness
+        </p>
+    </div>
+</div>
 {% endblock %}
