@@ -49,6 +49,8 @@ def reduce_stress(request):
         request,
         'reduce_stress.html',
     )
+
+
 def model_overview(request):
     """
     Return the model overview page
