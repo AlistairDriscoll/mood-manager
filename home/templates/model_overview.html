@@ -42,6 +42,26 @@
           <strong>mood score</strong> and <strong>stress level</strong>.
         </p>
 
+        <div class="accordion" id="dataDetailsAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                More Details About the Data
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#dataDetailsAccordion">
+              <div class="accordion-body mx-5">
+                <img src="{% static 'images/distribution_of_categorical_columns_count_plots.png' %}" alt="Categorical Columns Count Plots" class="mb-3 mt-4 rounded-top w-100">
+                <img src="{% static 'images/distribution_of_numerical_columns_histogram.png' %}" alt="Numerical Columns Histogram" class="mb-3 mt-4 rounded-top w-100">
+                <img src="{% static 'images/distribution_of_numerical_columns_violin_box_plots.png' %}" alt="Numerical Columns Violin & Box Plots" class="mb-3 mt-4 rounded-top w-100">
+                <div class="mx-5">
+                  <img src="{% static 'images/correlation_matrix_heatmap.png' %}" alt="Correlation Matrix Heatmap" class="mb-3 mt-4 rounded-top w-100">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <hr>
 
         <h5 class="mt-4">Machine Learning Approach</h5>
@@ -71,7 +91,7 @@
               <p class="mb-1">R² ≈ <strong>0.82</strong></p>
               <p class="text-muted small mb-0">Explains 82% of variance</p>
 
-              <img src="{% static 'images/predicting_mood_score_linear_regression_scatter.png' %}" alt="Rest & Relaxation Icon" class="mb-3 mt-4 rounded-top w-100">
+              <img src="{% static 'images/predicting_mood_score_linear_regression_scatter.png' %}" alt="Mood Score Regression Scatter" class="mb-3 mt-4 rounded-top w-100">
             </div>
           </div>
           <div class="col-md-6">
@@ -80,7 +100,7 @@
               <p class="mb-1">R² ≈ <strong>0.80</strong></p>
               <p class="text-muted small mb-0">Explains 80% of variance</p>
 
-               <img src="{% static 'images/predicting_stress_level_linear_regression_scatter.png' %}" alt="Rest & Relaxation Icon" class="mb-3 mt-4 rounded-top w-100">
+               <img src="{% static 'images/predicting_stress_level_linear_regression_scatter.png' %}" alt="Stress Level Regression Scatter" class="mb-3 mt-4 rounded-top w-100">
             </div>
           </div>
         </div>
