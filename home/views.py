@@ -33,3 +33,11 @@ def predict_view(request):
             "stress_pred": stress_pred,
         },
     )
+
+
+def model_overview(request):
+    """
+    Return the model overview page
+    """
+
+    return render(request, "model_overview.html")
