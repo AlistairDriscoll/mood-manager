@@ -82,12 +82,36 @@
       </div>
     </div>
     {% endif %}
+<!-- More Info Button -->
+    <div class="mt-4 text-center">
+      <button type="button" class="btn btn-outline-secondary btn-model-info" data-bs-toggle="modal" data-bs-target="#modelInfoModal">
+        More Info About This Model
+      </button>
+    </div>
 
   </div>
 </div>
+
+<!-- Model Overview Modal -->
+<div class="modal fade" id="modelInfoModal" tabindex="-1" aria-labelledby="modelInfoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modelInfoModalLabel">Model Overview</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-muted">Content will be added in Step 3.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>
 {% endblock %}
-
 
 {% block extra_js %}
 <script>
