@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import PredictionForm
 from ml_models.predict import predict_mood_and_stress
+from .suggestions import mood_suggestions
 
 
 def index(request):
@@ -21,6 +22,14 @@ def predict_view(request):
             preds = predict_mood_and_stress(form.cleaned_data)
             mood_pred = preds["mood_pred"]
             stress_pred = preds["stress_pred"]
+            mood_tips = mood_suggestions(form.cleaned_data)
+
+            request.session["last_prediction"] = {
+                "inputs": form.cleaned_data,
+                "preds": preds,
+                "mood_tips": mood_tips,
+            }
+
     else:
         form = PredictionForm()
 
