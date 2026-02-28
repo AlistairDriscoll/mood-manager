@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_head %}
+	<!-- SEO -->
+	<meta name="description" content="Track your emotions, understand your patterns, and improve your mental wellbeing one day at a time.">
+	
+	<!-- Open Graph (Social Media) -->
+	<meta property="og:title" content="Mood Manager - Track Your Emotional Wellbeing">
+	<meta property="og:description" content="Track your emotions, understand your patterns, and improve your mental wellbeing one day at a time.">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/og-card.png' %}">
+	<meta property="og:url" content="{{ request.build_absolute_uri }}">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Mood Manager">
+	
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+{% endblock %}
+
 {% block content %}
 <video autoplay muted loop playsinline class="bg-video">
   <source src="{% static 'videos/sunset.mp4' %}" type="video/mp4">

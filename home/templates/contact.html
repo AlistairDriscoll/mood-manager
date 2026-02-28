@@ -1,4 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+	<!-- SEO -->
+	<meta name="description" content="Get in touch with the Mood Manager team. We'd love to hear from you about your mental wellbeing journey.">
+	
+	<!-- Open Graph (Social Media) -->
+	<meta property="og:title" content="Contact Us - Mood Manager">
+	<meta property="og:description" content="Get in touch with the Mood Manager team.">
+  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/og-card.png' %}">
+	<meta property="og:url" content="{{ request.build_absolute_uri }}">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Mood Manager">
+	
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+{% endblock %}
 
 {% block title %}Contact Us{% endblock %}
 
