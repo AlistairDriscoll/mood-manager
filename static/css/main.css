@@ -1,6 +1,6 @@
 /* Landing Page Styles */
 .landing-hero {
-    min-height: 80vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,4 +86,30 @@
     color: #d3d3d3;
     margin-top: 3rem;
     font-weight: 300;
+}
+
+body {
+    padding-top: 100px;
+}
+
+.form-control::placeholder {
+    color: #adb5bd; 
+    opacity: 1; 
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: #ffc107;
+    color: #ffffff;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-button:hover {
+    background-color: #ffb300;
+    color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
