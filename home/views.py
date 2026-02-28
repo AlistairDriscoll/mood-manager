@@ -49,11 +49,3 @@ def reduce_stress(request):
         request,
         'reduce_stress.html',
     )
-
-
-def model_overview(request):
-    """
-    Return the model overview page
-    """
-
-    return render(request, "model_overview.html")
