@@ -57,3 +57,11 @@ def contact(request):
         request,
         'contact.html',
     )
+
+
+def faq(request):
+
+    return render(
+        request,
+        'faq.html',
+    )

@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}FAQ · Mood Manager{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-9">
+
+    <div class="mb-4">
+      <div class="p-4 p-md-5">
+        <h1 class="h3 mb-2 text-center">Predictor FAQ</h1>
+        <p class="text-muted mb-0 text-center">
+          Quick answers about how Mood Manager’s mood & stress predictions work.
+        </p>
+      </div>
+    </div>
+
+    <div class="accordion shadow-sm mb-5" id="faqAccordion">
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="q1">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="false" aria-controls="a1">
+            What does Mood Manager predict?
+          </button>
+        </h2>
+        <div id="a1" class="accordion-collapse collapse" aria-labelledby="q1" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Mood Manager produces two estimates: a <strong>Mood Score</strong> and a <strong>Stress Level</strong> (both on a 1–10 scale).
+            These predictions are based on the lifestyle inputs you enter (sleep, screen time, exercise, tasks, interruptions, etc.).
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="q2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false" aria-controls="a2">
+            How are the predictions generated?
+          </button>
+        </h2>
+        <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            The app uses <strong>regression-based machine learning</strong>. Your inputs are preprocessed (numeric scaling and categorical encoding),
+            then fed into trained regression models to estimate mood and stress.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="q3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="false" aria-controls="a3">
+            What data was used to train the model?
+          </button>
+        </h2>
+        <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            The model was trained on a dataset sourced from <strong>Kaggle</strong> containing 2,000 rows of lifestyle factors and associated mood/stress scores.
+            This project is a hackathon demo and is intended to show the end-to-end ML workflow.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="q4">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4" aria-expanded="false" aria-controls="a4">
+            Do you store my inputs or track users?
+          </button>
+        </h2>
+        <div id="a4" class="accordion-collapse collapse" aria-labelledby="q4" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <strong>No.</strong> Mood Manager does not collect, store, or share personal data. Inputs are used only to produce predictions and are not retained.
+            We also do not use analytics tracking or advertising cookies.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="q5">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a5" aria-expanded="false" aria-controls="a5">
+            Why can my result change a lot when I tweak one input?
+          </button>
+        </h2>
+        <div id="a5" class="accordion-collapse collapse" aria-labelledby="q5" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Some features have a larger impact on the trained model than others. For example, in this dataset, exercise and pending tasks are strong predictors.
+            Small changes in high-impact inputs can shift predictions more noticeably.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="q6">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a6" aria-expanded="false" aria-controls="a6">
+            Is this medical or mental health advice?
+          </button>
+        </h2>
+        <div id="a6" class="accordion-collapse collapse" aria-labelledby="q6" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <strong>No.</strong> Mood Manager is a demonstration tool built for educational/hackathon purposes. It does not provide medical, clinical,
+            or therapeutic advice. If you’re concerned about your mental health, consider speaking to a qualified professional.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="q7">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a7" aria-expanded="false" aria-controls="a7">
+            Why might the prediction be outside 1–10?
+          </button>
+        </h2>
+        <div id="a7" class="accordion-collapse collapse" aria-labelledby="q7" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Regression models can sometimes output values slightly outside the expected scale. In Mood Manager, predictions are typically
+            constrained to a 1–10 range for display.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="q8">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a8" aria-expanded="false" aria-controls="a8">
+            What should I try if I want a better mood / lower stress result?
+          </button>
+        </h2>
+        <div id="a8" class="accordion-collapse collapse" aria-labelledby="q8" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            You can use the form as a “what-if” sandbox. Try adjusting one variable at a time (e.g., more sleep, fewer pending tasks, or more exercise)
+            to see how the prediction changes. It’s a simple way to explore patterns in the model.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+{% endblock %}
