@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-7 col-md-9">
+
+    <div class="">
+      <div class="p-4 p-md-5">
+        <h1 class="h3 mb-2 text-center">Contact Us</h1>
+        <p class="text-muted mb-5 text-center">Have feedback or questions? Send us a message.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="name" class="form-label">Name</label>
+              <input id="name" name="name" type="text" class="form-control" placeholder="Jane Doe" required>
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email</label>
+              <input id="email" name="email" type="email" class="form-control" placeholder="jane@example.com" required>
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+
+            <div class="col-12">
+              <label for="subject" class="form-label">Subject</label>
+              <input id="subject" name="subject" type="text" class="form-control" placeholder="How can we help?" required>
+              <div class="invalid-feedback">Please enter a subject.</div>
+            </div>
+
+            <div class="col-12">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-control" rows="5" placeholder="Write your message..." required></textarea>
+              <div class="invalid-feedback">Please enter a message.</div>
+            </div>
+
+            <div class="col-12 d-flex gap-2 justify-content-end mt-2">
+              <button type="reset" class="btn btn-outline-secondary btn-sm" style="width: 100px;">Clear</button>
+              <button type="submit" class="btn contact-button btn-sm">
+                Send Message
+              </button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Thank You Modal -->
+<div class="modal fade" id="thanksModal" tabindex="-1" aria-labelledby="thanksModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="thanksModalLabel">Thanks!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-0">Thanks for your message, we’ll get back to you soon.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn contact-button btn-sm" data-bs-dismiss="modal">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  (function () {
+    const form = document.getElementById("contactForm");
+    const modalEl = document.getElementById("thanksModal");
+    const modal = new bootstrap.Modal(modalEl);
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // no postback
+
+      // Simple Bootstrap validation
+      if (!form.checkValidity()) {
+        e.stopPropagation();
+        form.classList.add("was-validated");
+        return;
+      }
+
+      // If valid: show modal + reset form state
+      modal.show();
+      form.reset();
+      form.classList.remove("was-validated");
+    });
+  })();
+</script>
+{% endblock %}

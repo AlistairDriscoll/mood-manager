@@ -49,3 +49,11 @@ def reduce_stress(request):
         request,
         'reduce_stress.html',
     )
+
+
+def contact(request):
+
+    return render(
+        request,
+        'contact.html',
+    )
