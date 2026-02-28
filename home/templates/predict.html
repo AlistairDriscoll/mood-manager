@@ -1,131 +1,291 @@
-{% extends 'base.html' %}
-
-{% block title %}Mood & Stress Predictor{% endblock %}
-
+{% extends 'base.html' %} {% load static %} {% block title %}Mood & Stress Predictor{% endblock %}
 {% block content %}
 <div class="container">
-<div class="row justify-content-center">
-  <div class="col-lg-8">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <h1 class="h4 mb-3">Daily Mood & Stress Predictor</h1>
+          <p class="text-muted mb-4">
+            Enter today’s habits to predict mood and stress.
+          </p>
 
-    <div class="card shadow-sm mb-4">
-      <div class="card-body">
-        <h1 class="h4 mb-3">Daily Mood & Stress Predictor</h1>
-        <p class="text-muted mb-4">Enter today’s habits to predict mood and stress.</p>
+          <form method="POST" novalidate>
+            {% csrf_token %}
 
-        <form method="POST" novalidate>
-          {% csrf_token %}
-
-          <div class="row g-3">
-            {% for field in form %}
+            <div class="row g-3">
+              {% for field in form %}
               <div class="col-md-6">
                 <label class="form-label" for="{{ field.id_for_label }}">
                   {{ field.label }}
                 </label>
 
-                {{ field }}
-
-                {% if field.help_text %}
-                  <div class="form-text">{{ field.help_text }}</div>
-                {% endif %}
-
-                {% if field.errors %}
-                  <div class="invalid-feedback d-block">
-                    {{ field.errors|striptags }}
-                  </div>
+                {{ field }} {% if field.help_text %}
+                <div class="form-text">{{ field.help_text }}</div>
+                {% endif %} {% if field.errors %}
+                <div class="invalid-feedback d-block">
+                  {{ field.errors|striptags }}
+                </div>
                 {% endif %}
               </div>
-            {% endfor %}
-          </div>
-
-          <button type="submit" class="btn btn-primary w-100 mt-4">
-            Predict
-          </button>
-        </form>
-      </div>
-    </div>
-
-    {% if mood_pred is not None %}
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <h2 class="h5 mb-3">Results</h2>
-
-        <div class="row g-3">
-          <div class="col-md-6">
-            <div class="p-3 rounded border">
-              <div class="text-muted">Predicted Mood</div>
-              <div class="display-6 mb-1
-                {% if mood_pred >= 7 %}text-success
-                {% elif mood_pred >= 4 %}text-warning
-                {% else %}text-danger
-                {% endif %}">
-                {{ mood_pred|floatformat:2 }}
-              </div>
-              <div class="text-muted">out of 10</div>
+              {% endfor %}
             </div>
-          </div>
 
-          <div class="col-md-6">
-            <div class="p-3 rounded border">
-              <div class="text-muted">Predicted Stress</div>
-              <div class="display-6 mb-1
-                {% if stress_pred >= 7 %}text-danger
-                {% elif stress_pred >= 4 %}text-warning
-                {% else %}text-success
-                {% endif %}">
-                {{ stress_pred|floatformat:2 }}
+            <button type="submit" class="btn btn-primary w-100 mt-4">
+              Predict
+            </button>
+          </form>
+        </div>
+      </div>
+
+      {% if mood_pred is not None %}
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="h5 mb-3">Results</h2>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="p-3 rounded border">
+                <div class="text-muted">Predicted Mood</div>
+                <div
+                  class="display-6 mb-1 {% if mood_pred >= 7 %}text-success {% elif mood_pred >= 4 %}text-warning {% else %}text-danger {% endif %}"
+                >
+                  {{ mood_pred|floatformat:2 }}
+                </div>
+                <div class="text-muted">out of 10</div>
               </div>
-              <div class="text-muted">out of 10</div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="p-3 rounded border">
+                <div class="text-muted">Predicted Stress</div>
+                <div
+                  class="display-6 mb-1 {% if stress_pred >= 7 %}text-danger {% elif stress_pred >= 4 %}text-warning {% else %}text-success {% endif %}"
+                >
+                  {{ stress_pred|floatformat:2 }}
+                </div>
+                <div class="text-muted">out of 10</div>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
-    </div>
-    {% endif %}
-<!-- More Info Button -->
-    <div class="mt-4 text-center">
-      <button type="button" class="btn btn-outline-secondary btn-model-info" data-bs-toggle="modal" data-bs-target="#modelInfoModal">
-        More Info About This Model
-      </button>
-    </div>
-
-  </div>
-</div>
-
-<!-- Model Overview Modal -->
-<div class="modal fade" id="modelInfoModal" tabindex="-1" aria-labelledby="modelInfoModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modelInfoModalLabel">Model Overview</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="text-muted">Content will be added in Step 3.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      {% endif %}
+      <!-- More Info Button -->
+      <div class="mt-4 text-center">
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-model-info"
+          data-bs-toggle="modal"
+          data-bs-target="#modelInfoModal"
+        >
+          More Info About This Model
+        </button>
       </div>
     </div>
   </div>
-</div>
 
-</div>
-{% endblock %}
+  <!-- Model Overview Modal -->
+  <div
+    class="modal fade"
+    id="modelInfoModal"
+    tabindex="-1"
+    aria-labelledby="modelInfoModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modelInfoModalLabel">Model Overview</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <h1 class="h3 mb-3">About the Mood & Stress Predictor</h1>
 
-{% block extra_js %}
+          <p class="lead">
+            This application predicts daily <strong>mood</strong> and
+            <strong>stress levels</strong> based on lifestyle and behavioral
+            inputs.
+          </p>
+
+          <hr />
+
+          <h5 class="mt-4">Data Source</h5>
+          <p>
+            The dataset used to train this model was sourced from
+            <strong
+              ><a
+                href="https://www.kaggle.com/datasets/mabubakrsiddiq/general-mental-health-and-lifestyle-dataset"
+                target="_blank"
+                >Kaggle</a
+              ></strong
+            >. It includes 2,000 records of lifestyle factors such as:
+          </p>
+
+          <ul>
+            <li>Sleep duration</li>
+            <li>Screen time</li>
+            <li>Exercise minutes</li>
+            <li>Daily pending tasks</li>
+            <li>Interruptions</li>
+            <li>Fatigue level</li>
+            <li>Social hours</li>
+            <li>Coffee consumption</li>
+            <li>Diet quality</li>
+            <li>Weather conditions</li>
+          </ul>
+
+          <p>
+            These features were used to predict two target variables:
+            <strong>mood score</strong> and <strong>stress level</strong>.
+          </p>
+
+          <div class="accordion" id="dataDetailsAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="false"
+                  aria-controls="collapseOne"
+                >
+                  More Details About the Data
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingOne"
+                data-bs-parent="#dataDetailsAccordion"
+              >
+                <div class="accordion-body mx-5">
+                  <img
+                    src="{% static 'images/distribution_of_categorical_columns_count_plots.png' %}"
+                    alt="Categorical Columns Count Plots"
+                    class="mb-3 mt-4 rounded-top w-100"
+                  />
+                  <img
+                    src="{% static 'images/distribution_of_numerical_columns_histogram.png' %}"
+                    alt="Numerical Columns Histogram"
+                    class="mb-3 mt-4 rounded-top w-100"
+                  />
+                  <img
+                    src="{% static 'images/distribution_of_numerical_columns_violin_box_plots.png' %}"
+                    alt="Numerical Columns Violin & Box Plots"
+                    class="mb-3 mt-4 rounded-top w-100"
+                  />
+                  <div class="mx-5">
+                    <img
+                      src="{% static 'images/correlation_matrix_heatmap.png' %}"
+                      alt="Correlation Matrix Heatmap"
+                      class="mb-3 mt-4 rounded-top w-100"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <h5 class="mt-4">Machine Learning Approach</h5>
+          <p>
+            We trained two separate <strong>regression models</strong> using
+            supervised machine learning techniques.
+          </p>
+
+          <p>Each model uses:</p>
+
+          <ul>
+            <li>Data preprocessing (scaling + encoding)</li>
+            <li>Log transformation for skewed features</li>
+            <li>Linear Regression for prediction</li>
+          </ul>
+
+          <p>The models achieved strong predictive performance:</p>
+
+          <div class="row text-center">
+            <div class="col-md-6">
+              <div class="p-3 border rounded">
+                <h6>Mood Model</h6>
+                <p class="mb-1">R² ≈ <strong>0.82</strong></p>
+                <p class="text-muted small mb-0">Explains 82% of variance</p>
+
+                <img
+                  src="{% static 'images/predicting_mood_score_linear_regression_scatter.png' %}"
+                  alt="Mood Score Regression Scatter"
+                  class="mb-3 mt-4 rounded-top w-100"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 border rounded">
+                <h6>Stress Model</h6>
+                <p class="mb-1">R² ≈ <strong>0.80</strong></p>
+                <p class="text-muted small mb-0">Explains 80% of variance</p>
+
+                <img
+                  src="{% static 'images/predicting_stress_level_linear_regression_scatter.png' %}"
+                  alt="Stress Level Regression Scatter"
+                  class="mb-3 mt-4 rounded-top w-100"
+                />
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <h5 class="mt-4">How It Works</h5>
+          <p>
+            Users input their daily habits into the prediction form. The
+            application then:
+          </p>
+
+          <ol>
+            <li>Validates the inputs</li>
+            <li>Applies the trained preprocessing pipeline</li>
+            <li>Runs the regression models</li>
+            <li>Returns predicted mood and stress levels</li>
+          </ol>
+
+          <p>
+            The goal is to demonstrate how lifestyle patterns can be modeled to
+            estimate emotional wellbeing using machine learning.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block extra_js %}
 <script>
-document.querySelectorAll('input[type="range"]').forEach((slider) => {
+  document.querySelectorAll('input[type="range"]').forEach((slider) => {
     const valueDisplay = document.createElement("div");
     valueDisplay.className = "text-end small text-muted";
     slider.after(valueDisplay);
 
     const updateValue = () => {
-        valueDisplay.textContent = slider.value;
+      valueDisplay.textContent = slider.value;
     };
 
     slider.addEventListener("input", updateValue);
     updateValue();
-});
+  });
 </script>
 {% endblock %}
