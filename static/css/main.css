@@ -155,37 +155,6 @@ footer i {
   margin-right: 0.5rem;
 }
 
-/*copyright*/
-#copyright {
-  font-size: 0.7rem;
-  margin-bottom: 0;
-}
-
-.directory a {
-  text-decoration: none;
-}
-.btn-custom {
-  background-color: #1e6874;
-  color: white;
-  border: none;
-  padding: 0.2rem;
-}
-
-.btn-custom:hover {
-  background-color: #16505a;
-  color: white;
-}
-
-@media screen and (max-width: 600px) {
-  .nav-brand {
-    font-size: 0.8rem;
-  }
-  #copyright {
-    margin-top: 0.6rem;
-    font-size: 0.6rem;
-  }
-}
-
 .custom-navbar,
 footer,
 footer a {
@@ -202,41 +171,23 @@ footer a {
   
 }
 
-footer i {
-  margin: 0;
-}
-
-.navbar-brand {
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: #1e6874;
-  text-shadow: #fcfcfc 2px 2px 5px;
-}
-
-.nav-item {
-  color: #1e6874;
-  text-shadow: #fcfcfc 2px 2px 5px;
-  font-weight: 700;
-  margin-right: 0.5rem;
-}
-
 /*copyright*/
 #copyright {
   font-size: 0.8rem;
   margin-bottom: 0;
 }
 
-.directory a {
-  text-decoration: none;
-}
-.btn-custom {
-  background-color: #1e6874;
-  color: white;
-  border: none;
-  padding: 0.2rem;
+
+@media screen and (max-width: 768px) {
+  .nav-brand {
+    font-size: 0.8rem;
+  }
+  #copyright {
+    margin-top: 0.6rem;
+    font-size: 0.6rem;
+  }
+
+
 }
 
-.btn-custom:hover {
-  background-color: #16505a;
-  color: white;
-}
+
