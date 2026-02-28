@@ -13,7 +13,7 @@
 	</head>
 	<body class="d-flex flex-column min-vh-100">
 		<div>
-			<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+			<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Mood-Manager</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Help Your Mind
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu custom-dropdown">
             <li><a class="dropdown-item" href="/improve-mood">Improve Your Mood</a></li>
             <li><a class="dropdown-item" href="/reduce-stress">Reduce Stress</a></li>
             <li><hr class="dropdown-divider"></li>
@@ -47,31 +47,31 @@
 		</div>
 		{% block content %}
 		{% endblock %}
-	<footer class="mt-auto pt-3 pb-3  bg-light">
+	<footer class="mt-auto pt-3 pb-3">
   <div class="container px-5">
     <div class="d-flex justify-content-between align-items-center flex-wrap">
       
       <!-- Left side -->
-      <div class="d-flex flex-column">
-        <p class="mb-2">February Hackathon with Hearth 2026</p>
-        <p class="mb-2">Visit us on Socials</p>
+      <div class="d-flex flex-column mb-2">
+		
+        
+        <p>Visit us on Socials</p>
         <div class=" d-flex gap-1">
-          <i class="fa-brands fa-square-facebook mt-2"></i>
-          <i class="fa-brands fa-square-instagram mt-2"></i>
-          <i class="fa-brands fa-square-x-twitter mt-2"></i>
+          <i class="fa-brands fa-square-facebook"></i>
+          <i class="fa-brands fa-square-instagram"></i>
+          <i class="fa-brands fa-square-x-twitter "></i>  
         </div>
       </div>
 
       <!-- Right side -->
-      <div class="d-flex flex-column gap-1">
-        <a href="/">Home</a>
-        <a href="/predict">Mood Predictor</a>
-        <a href="/improve-mood">Improve Your Mood</a>
-        <a href="/reduce-stress">Reduce Your Stress</a>
-      </div>
-
+      <div class="d-flex flex-column directory">
+		<a href="/contact-us" class=" mb-2">Contact us</a>
+        <a href="/" class="btn-custom btn">Home</a>
+		
+	  </div>
     </div>
   </div>
+  <p class="text-center" id="copyright">&copy;  Copyright {% now "Y" %} Hackathon with Heart</p>
 </footer>
 		<!-- Bootstrap JS and other scripts -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
