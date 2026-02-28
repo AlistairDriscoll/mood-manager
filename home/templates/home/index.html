@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+<video autoplay muted loop playsinline class="bg-video">
+  <source src="{% static 'videos/sunset.mp4' %}" type="video/mp4">
+</video>
+
+<div class="video-overlay"></div>
+
 <div class="landing-hero">
     <div class="hero-content">
         <div class="logo-container">
