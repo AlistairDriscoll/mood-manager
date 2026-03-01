@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./images/banner.png" width="90%"  alt="Project banner" /> 🚧 TODO - add an img
+  <img src="./static/images/mood_manager_banner.png" width="90%"  alt="Project banner" />
 </p>
 
 <h1 align="center">Mood Manager</h1>
@@ -8,19 +8,6 @@
   An interactive predictive web application exploring how lifestyle factors influence mood and stress levels.
 </p>
 
-<p align="center">
-  <a href="https://www.python.org/">
-    <img alt="Python" height="29px" src="./images/python-logo.png" />
-  </a>
-  <a href="https://www.djangoproject.com/">
-    <img alt="Django" height="29px" src="./images/django-logo.png">
-  </a>
-  <a href="https://getbootstrap.com/">
-    <img alt="Bootstrap" height="29px" src="./images/bootstrap-logo.png">
-  </a>
-  🚧 TODO - add what other ones used for project
-  🚧 TODO - add img for each one
-</p>
 
 ## Overview
 
