@@ -8,7 +8,19 @@
   An interactive predictive web application exploring how lifestyle factors influence mood and stress levels.
 </p>
 
-<br/>
+
+<p align="center">
+    <a href="./jupyter_notebooks/01_clean_the_data.ipynb">Data Clean</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    <a href="./jupyter_notebooks/02_predicting_mood_score.ipynb">Mood Score Model</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+	<a href="./jupyter_notebooks/03_predicting_stress_level.ipynb">Stress Level Model</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    <a href="https://mood-manager.onrender.com/">Live Demo</a>
+</p>
+
+<br />
+<br />
 
 <details>
 <summary align="center">Table of contents (Click to show)</summary>
@@ -345,7 +357,7 @@ Future production implementations should include secure authentication, encrypte
 Testing focused on ensuring that user inputs are processed correctly, outputs are meaningful and all parts of the website function, and are relevant to the site.
 
 - **Input validation:** Ensured slider values remain within expected ranges and handle edge cases (e.g., 0 or maximum values).
-- **Output checks:** Verified Mood and Stress predictions respond consistently to varying inputs. 🚧 TODO - mood ok when 0 sleep, check more
+- **Output checks:** Verified Mood and Stress predictions respond consistently to varying inputs.
 - **Functional testing:** Confirmed that Predict button triggers calculation and results update correctly.
 - **Cross-browser / device checks:** Ensured layout and responsiveness work on desktop, tablet, and mobile screens.
 - **Future testing plans:** Unit and integration tests can be added to automate validation as the project evolves.
@@ -355,6 +367,7 @@ Testing focused on ensuring that user inputs are processed correctly, outputs ar
 - Alistair Driscoll - [https://www.linkedin.com/in/alistair-driscoll/](https://www.linkedin.com/in/alistair-driscoll/)
 - Anthony Radose - [https://www.linkedin.com/in/anthony-radose-35a969236/](https://www.linkedin.com/in/anthony-radose-35a969236/)
 - Pete Smith - [https://www.linkedin.com/in/petedanielsmith/](https://www.linkedin.com/in/petedanielsmith/)
+- Hana Rubesova - [https://www.linkedin.com/in/hana-rubesova-6338b9104/](https://www.linkedin.com/in/hana-rubesova-6338b9104/)
 
 ## Acknowledgements
 
