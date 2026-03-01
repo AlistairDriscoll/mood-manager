@@ -42,20 +42,23 @@
 		{% endblock %}
 	<footer class="mt-auto pt-3 pb-3">
   <div class="container px-5">
-    <div class="socials d-flex justify-content-between justify-content-center align-items-center flex-wrap">
+    <div class="socials d-flex flex-column flex-lg-row justify-content-between align-items-center flex-wrap">
       
       <!-- Left side -->
-      <div class="socials d-flex align-items-center gap-2 flex-wrap">
-        
-       <div class="social-icons d-flex gap-2">
-          <i class="fa-brands fa-square-facebook mt-1"></i>
-          <i class="fa-brands fa-square-instagram mt-1"></i>
-          <i class="fa-brands fa-square-x-twitter mt-1"></i>  
-        </div>
-      </div>
 
+        
+       <div class="social-icons d-flex gap-2 order-2 order-order-lg-3 mt-3 mt-lg-0">
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook"><i class="fa-brands fa-square-facebook mt-1"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram"><i class="fa-brands fa-square-instagram mt-1"></i></a>
+          <a href="https://x.com" target="_blank" rel="noopener" aria-label="Visit our X"><i class="fa-brands fa-square-x-twitter mt-1"></i></a>  
+        </div>
+      
+      <!--middle-->
+      <div class="d-flex gap-2 order-3 order-lg-1">
+        <p class="d-flex justify-content-center" id="copyright">&copy;  Copyright {% now "Y" %} Hackathon with Heart</p>
+      </div>
       <!-- Right side -->
-      <div class="d-flex justify-content-end gap-3 small">
+      <div class="d-flex justify-content-end gap-3 small order-1 order-lg-1">
 
         <a href="/faq" class="nav-link">
           FAQ
@@ -76,7 +79,7 @@
     </div>
     </div>
   </div>
-  <p class="text-center" id="copyright">&copy;  Copyright {% now "Y" %} Hackathon with Heart</p>
+  
 </footer>
 
 
