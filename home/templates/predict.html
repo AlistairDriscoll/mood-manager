@@ -22,68 +22,71 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-8">
-      <div class="card shadow-sm mb-4">
+      <h1 class="display-6 fw-bold mb-2 text-center">Daily Mood & Stress Predictor</h1>
+        <p class="lead text-muted mb-3 text-center">
+          Enter today’s habits to predict mood and stress.
+        </p>
+       
         <div class="card-body">
-          <h1 class="h4 mb-3">Daily Mood & Stress Predictor</h1>
-          <p class="text-muted mb-4">
-            Enter today’s habits to predict mood and stress.
-          </p>
+          <div class="card shadow-sm mb-4 pt-4">
+              <form method="POST" novalidate>
+                {% csrf_token %}
 
-          <form method="POST" novalidate>
-            {% csrf_token %}
+                <div class="row g-1">
+                  {% for field in form %}
+                  <div class="col-md-6 px-4">
+                    <label class="form-label" for="{{ field.id_for_label }}">
+                      {{ field.label }}
+                    </label>
 
-            <div class="row g-3">
-              {% for field in form %}
-              <div class="col-md-6">
-                <label class="form-label" for="{{ field.id_for_label }}">
-                  {{ field.label }}
-                </label>
-
-                {{ field }} {% if field.help_text %}
-                <div class="form-text">{{ field.help_text }}</div>
-                {% endif %} {% if field.errors %}
-                <div class="invalid-feedback d-block">
-                  {{ field.errors|striptags }}
+                    {{ field }} {% if field.help_text %}
+                    <div class="form-text">{{ field.help_text }}</div>
+                    {% endif %} {% if field.errors %}
+                    <div class="invalid-feedback d-block">
+                      {{ field.errors|striptags }}
+                    </div>
+                    {% endif %}
+                  </div>
+                  {% endfor %}
                 </div>
-                {% endif %}
-              </div>
-              {% endfor %}
-            </div>
 
-            <button type="submit" class="btn contact-button btn-sm w-100 mt-4 fs-6 fw-medium">
-              Predict
-            </button>
-          </form>
+                <button type="submit" class="btn contact-button btn-sm my-4 fs-6 w-50 fw-medium mx-auto d-block">
+                  Predict
+                </button>
+              </form>
+          </div>
         </div>
       </div>
 
       {% if mood_pred is not None %}
-      <div class="card shadow-sm">
-        <div class="card-body">
-          <h2 class="h5 mb-3">Results</h2>
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Results</h2>
 
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="p-3 rounded border">
-                <div class="text-muted">Predicted Mood</div>
-                <div
-                  class="display-6 mb-1 {% if mood_pred >= 7 %}text-success {% elif mood_pred >= 4 %}text-warning {% else %}text-danger {% endif %}"
-                >
-                  {{ mood_pred|floatformat:2 }}
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="p-3 rounded border">
+                  <div class="text-muted">Predicted Mood</div>
+                  <div
+                    class="display-6 mb-1 {% if mood_pred >= 7 %}text-success {% elif mood_pred >= 4 %}text-warning {% else %}text-danger {% endif %}"
+                  >
+                    {{ mood_pred|floatformat:2 }}
+                  </div>
+                  <div class="text-muted">out of 10</div>
                 </div>
-                <div class="text-muted">out of 10</div>
               </div>
-            </div>
 
-            <div class="col-md-6">
-              <div class="p-3 rounded border">
-                <div class="text-muted">Predicted Stress</div>
-                <div
-                  class="display-6 mb-1 {% if stress_pred >= 7 %}text-danger {% elif stress_pred >= 4 %}text-warning {% else %}text-success {% endif %}"
-                >
-                  {{ stress_pred|floatformat:2 }}
+              <div class="col-md-6">
+                <div class="p-3 rounded border">
+                  <div class="text-muted">Predicted Stress</div>
+                  <div
+                    class="display-6 mb-1 {% if stress_pred >= 7 %}text-danger {% elif stress_pred >= 4 %}text-warning {% else %}text-success {% endif %}"
+                  >
+                    {{ stress_pred|floatformat:2 }}
+                  </div>
+                  <div class="text-muted">out of 10</div>
                 </div>
-                <div class="text-muted">out of 10</div>
               </div>
             </div>
           </div>

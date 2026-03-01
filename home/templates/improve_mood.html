@@ -30,4 +30,225 @@
     <p>You haven't had your mood predicted yet! Click the <a href="{% url 'predict' %}">predict mood</a> button to so so.</p>
 {% endif %}
 
+
+
+<div class="row justify-content-center mb-5">
+  <div class="col-lg-9">
+
+    <!-- Hero -->
+    <div class="mb-4">
+      <div class="p-4 p-md-5">
+        <h1 class="display-6 fw-bold mb-2 text-center">How to Improve Your Mood</h1>
+        <p class="lead text-muted mb-3 text-center">
+          Practical, evidence-informed habits you can try today — based on what Mood Manager’s predictor found most strongly linked with mood.
+        </p>
+
+        <div class="d-flex flex-wrap gap-2">
+          <span class="badge text-bg-success">Exercise (strongest)</span>
+          <span class="badge text-bg-warning">Reduce screen time (moderate)</span>
+          <span class="badge text-bg-info">Sleep a bit more (smaller boost)</span>
+        </div>
+
+        <div class="alert alert-secondary mt-4 mb-0">
+          <small>
+            <strong>Note:</strong> Mood Manager is a hackathon demo. This page is for general information, not medical advice.
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Exercise -->
+    <div class="card shadow-sm mb-4">
+      <div class="card-body p-4">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+          <h2 class="h4 mb-0">1) Move your body (even a little)</h2>
+          <span class="badge text-bg-success">High impact</span>
+        </div>
+
+        <p class="text-muted mt-3 mb-3">
+          Across many studies, exercise is consistently associated with improved mood and reduced depressive symptoms. The best “type” is often the one
+          you’ll actually keep doing — walking/jogging, strength training, and yoga show strong results in large evidence reviews.
+        </p>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="border rounded p-3 h-100">
+              <h3 class="h6">Try this today</h3>
+              <ul class="mb-0">
+                <li><strong>10–20 min walk</strong> outdoors (easy win)</li>
+                <li><strong>2–3 sets</strong> of bodyweight moves (squats, pushups, rows)</li>
+                <li><strong>Short yoga flow</strong> (5–15 minutes)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="border rounded p-3 h-100">
+              <h3 class="h6">Make it stick</h3>
+              <ul class="mb-0">
+                <li>Lower the bar: “show up” beats “go hard”</li>
+                <li>Attach it to a trigger: after lunch / after work</li>
+                <li>Track streaks: small consistency > intensity</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-success mt-3 mb-0">
+          <small>
+            Evidence: large systematic reviews/meta-analyses support exercise as an effective intervention for depressive symptoms.
+            See references below.
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Screen time -->
+    <div class="card shadow-sm mb-4">
+      <div class="card-body p-4">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+          <h2 class="h4 mb-0">2) Reduce screen time (especially “doom scroll”)</h2>
+          <span class="badge text-bg-warning">Medium impact</span>
+        </div>
+
+        <p class="text-muted mt-3 mb-3">
+          Higher screen time (and some types of social media use) is linked with worse mood and higher risk of depressive symptoms in multiple cohort studies
+          and meta-analyses. This doesn’t mean “screens are evil” — it means your <em>dose</em> and <em>type</em> matter.
+        </p>
+
+        <div class="border rounded p-3 mb-3">
+          <h3 class="h6 mb-2">Quick swaps that work</h3>
+          <div class="row g-2">
+            <div class="col-md-6">
+              <ul class="mb-0">
+                <li>Set a <strong>30–60 min “no phone”</strong> block after waking</li>
+                <li>Move social apps off your home screen</li>
+                <li>Turn off non-essential notifications</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="mb-0">
+                <li>Replace night scrolling with a short routine: shower / stretch / tea</li>
+                <li>Use “one screen at a time” (no TV + phone combo)</li>
+                <li>Try a <strong>screen curfew</strong> 30 min before bed</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-warning mb-0">
+          <small>
+            Evidence: prospective cohort meta-analyses and large observational studies report associations between higher screen time/social media use and
+            depressive symptoms. See references below.
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Sleep -->
+    <div class="card shadow-sm mb-4">
+      <div class="card-body p-4">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+          <h2 class="h4 mb-0">3) Sleep a bit more (and more consistently)</h2>
+          <span class="badge text-bg-info">Smaller boost</span>
+        </div>
+
+        <p class="text-muted mt-3 mb-3">
+          In Mood Manager’s model, sleep had a smaller direct link to mood than exercise — but good sleep still supports emotional regulation and resilience.
+          Sleep deprivation and disruption are repeatedly associated with worse emotional outcomes across research.
+        </p>
+
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="border rounded p-3 h-100">
+              <h3 class="h6">Tonight</h3>
+              <ul class="mb-0">
+                <li>Set a realistic bedtime</li>
+                <li>Cool, dark room</li>
+                <li>Charge phone away from bed</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="border rounded p-3 h-100">
+              <h3 class="h6">This week</h3>
+              <ul class="mb-0">
+                <li>Keep wake time within ~1 hour</li>
+                <li>Morning light exposure</li>
+                <li>Caffeine earlier in the day</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="border rounded p-3 h-100">
+              <h3 class="h6">If you’re restless</h3>
+              <ul class="mb-0">
+                <li>Short wind-down routine</li>
+                <li>Write tasks down (offload brain)</li>
+                <li>Gentle stretching / breathing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-info mt-3 mb-0">
+          <small>
+            Evidence: systematic reviews link sleep disruption/deprivation with poorer emotional outcomes. See references below.
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="card shadow-sm mb-4">
+      <div class="card-body p-4 d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+        <div>
+          <h2 class="h5 mb-1">Want to see how your habits affect predictions?</h2>
+          <p class="text-muted mb-0">Use the predictor as a “what-if” sandbox — change one habit at a time.</p>
+        </div>
+        <a href="{% url 'predict' %}" class="btn contact-button btn-sm">Try the Predictor</a>
+      </div>
+    </div>
+
+    <!-- References -->
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <h2 class="h5">References (Studies & Reviews)</h2>
+        <p class="text-muted small">
+          Links go to publisher pages or PubMed/PMC where available.
+        </p>
+
+        <ul class="small mb-0">
+          <li>
+            Noetel et al. (2024). <em>Effect of exercise for depression: systematic review and network meta-analysis</em>. The BMJ.
+            <a href="https://www.bmj.com/content/384/bmj-2023-075847" target="_blank" rel="noopener">BMJ</a> ·
+            <a href="https://pubmed.ncbi.nlm.nih.gov/38355154/" target="_blank" rel="noopener">PubMed</a>
+          </li>
+          <li>
+            Heissel et al. (2023). <em>Exercise as medicine for depressive symptoms? A systematic review and meta-analysis</em>. British Journal of Sports Medicine.
+            <a href="https://bjsm.bmj.com/content/57/16/1049" target="_blank" rel="noopener">BJSM</a>
+          </li>
+          <li>
+            Gao et al. (2024). <em>Meta-analysis of prospective cohort studies on screen time and depression risk in adolescents</em>.
+            <a href="https://www.sciencedirect.com/science/article/pii/S0001691824004086" target="_blank" rel="noopener">ScienceDirect</a>
+          </li>
+          <li>
+            Li et al. (2022). <em>Screen time and depression risk: meta-analysis of cohort studies</em>.
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9815119/" target="_blank" rel="noopener">PMC</a>
+          </li>
+          <li>
+            Nagata et al. (2025). <em>Social Media Use and Depressive Symptoms During Early Adolescence</em>. JAMA Network Open.
+            <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2834349" target="_blank" rel="noopener">JAMA Network Open</a>
+          </li>
+          <li>
+            Systematic review (2026). <em>Sleep and Emotion in Adolescents</em> (sleep disruption/deprivation and emotional outcomes).
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12929081/" target="_blank" rel="noopener">PMC</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 {% endblock %}
