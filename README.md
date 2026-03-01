@@ -368,6 +368,7 @@ Testing focused on ensuring that user inputs are processed correctly, outputs ar
 - Anthony Radose - [https://www.linkedin.com/in/anthony-radose-35a969236/](https://www.linkedin.com/in/anthony-radose-35a969236/)
 - Pete Smith - [https://www.linkedin.com/in/petedanielsmith/](https://www.linkedin.com/in/petedanielsmith/)
 - Hana Rubesova - [https://www.linkedin.com/in/hana-rubesova-6338b9104/](https://www.linkedin.com/in/hana-rubesova-6338b9104/)
+- Barby Kelly - [https://www.linkedin.com/in/barby-kelly-130a362a3/](https://www.linkedin.com/in/barby-kelly-130a362a3/)
 
 ## Acknowledgements
 
