@@ -80,7 +80,7 @@ body {
   font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 600;
   padding: 1rem 2.5rem;
-  border-radius: 12px;
+  border-radius: 30px;
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -113,7 +113,7 @@ body {
   background-color: #ffc107;
   color: #1e6874;
   padding: 1rem 2.5rem;
-  border-radius: 12px;
+  border-radius: 30px;
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -157,6 +157,10 @@ footer a {
   color: #1e6874;
   text-shadow: #fbf9f9 3px 3px 4px;
   font-weight: 700;
+}
+
+.text-muted.mt-3.mb-3, card-body p-4 {
+  text-align:justify;
 }
 
 
