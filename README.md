@@ -1,6 +1,15 @@
-# Mood Manager
+<p align="center">
+  <img src="./static/images/mood_manager_banner.png" width="90%"  alt="Project banner" />
+</p>
+
+<h1 align="center">Mood Manager</h1>
+
+<p align="center">
+  An interactive predictive web application exploring how lifestyle factors influence mood and stress levels.
+</p>
 
 An interactive predictive web application exploring how lifestyle factors influence mood and stress levels.
+
 
 ## Overview
 
@@ -102,6 +111,8 @@ Colour-coded results:
 - **Yellow/Orange:** Intermediate states
 
 ## Responsiveness
+
+![Demo image of responsive devices](./static/images/all-devices-black.png)
 
 The application is designed mobile-first using the Bootstrap grid system.
 Layouts adapt seamlessly across:
@@ -289,7 +300,6 @@ Future production implementations should include secure authentication, encrypte
 ## Future Improvements
 
 - A bigger bank of tips for the user
-- Machine learning-based predictive model
 - Historical tracking and visual dashboards
 - Personalised behavioural recommendations
 - User authentication and profile management
@@ -309,9 +319,9 @@ Testing focused on ensuring that user inputs are processed correctly, outputs ar
 
 ## Contributors - 🚧 TODO - add names, edit list
 
-- Names – Backend & Architecture
-- Names – Frontend & UI
-- Names – Testing & Documentation
+- Alistair Driscoll - [https://www.linkedin.com/in/alistair-driscoll/](https://www.linkedin.com/in/alistair-driscoll/)
+- Anthony Radose - [https://www.linkedin.com/in/anthony-radose-35a969236/](https://www.linkedin.com/in/anthony-radose-35a969236/)
+- Pete Smith - [https://www.linkedin.com/in/petedanielsmith/](https://www.linkedin.com/in/petedanielsmith/)
 
 ## Acknowledgements - 🚧 TODO - edit
 
