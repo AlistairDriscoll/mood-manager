@@ -40,47 +40,39 @@
 		</div>
 		{% block content %}
 		{% endblock %}
-	<footer class="mt-auto pt-3 pb-3">
-  <div class="container px-5">
-    <div class="socials d-flex flex-column flex-lg-row justify-content-between align-items-center flex-wrap">
-      
-      <!-- Left side -->
 
-        
-       <div class="social-icons d-flex gap-2 order-2 order-order-lg-3 mt-3 mt-lg-0">
+  <footer class="mt-auto pt-3 pb-3">
+    <div class="row g-1 px-4 mt-0 mt-lg-2">
+      <div class="col-12 col-lg-4">
+        <p class="text-center text-lg-start" id="copyright">&copy;  Copyright {% now "Y" %} Hackathon with Heart</p>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="d-flex justify-content-center gap-3 small order-1 order-lg-1">
+          <a href="/faq" class="nav-link text-nowrap">
+            FAQ
+          </a>
+          <a href="/contact-us" class="nav-link text-nowrap">
+            Contact Us
+          </a>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" class="nav-link text-nowrap">
+            Privacy Policy
+          </a>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal" class="nav-link text-nowrap">
+            Terms & Conditions
+          </a>
+      </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="social-icons d-flex gap-2 order-2 order-order-lg-3 mt-3 mt-lg-0 justify-content-center justify-content-lg-end">
           <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook"><i class="fa-brands fa-square-facebook mt-1"></i></a>
           <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram"><i class="fa-brands fa-square-instagram mt-1"></i></a>
           <a href="https://x.com" target="_blank" rel="noopener" aria-label="Visit our X"><i class="fa-brands fa-square-x-twitter mt-1"></i></a>  
         </div>
-      
-      <!--middle-->
-      <div class="d-flex gap-2 order-3 order-lg-1">
-        <p class="d-flex justify-content-center" id="copyright">&copy;  Copyright {% now "Y" %} Hackathon with Heart</p>
       </div>
-      <!-- Right side -->
-      <div class="d-flex justify-content-end gap-3 small order-1 order-lg-1">
-
-        <a href="/faq" class="nav-link">
-          FAQ
-        </a>
-
-        <a href="/contact-us" class="nav-link">
-          Contact Us
-        </a>
-
-        <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" class="nav-link">
-          Privacy Policy
-        </a>
-
-        <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal" class="nav-link">
-          Terms & Conditions
-        </a>
-
     </div>
-    </div>
-  </div>
-  
-</footer>
+  </footer>
+
+
 
 
 <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">

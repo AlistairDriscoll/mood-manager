@@ -136,19 +136,6 @@ footer a,
   font-weight: 700;
 }
 
-footer a {
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-footer p {
-  font-size: 0.9rem;
-}
-
-footer i {
-  margin: 0;
-}
-
 .navbar-brand {
   font-weight: 700;
   font-size: 1.3rem;
@@ -172,33 +159,6 @@ footer a {
   font-weight: 700;
 }
 
-footer,
-footer p,
-footer a {
-  padding: 0;
-  
-}
 
-/*copyright*/
-#copyright {
-  font-size: 0.8rem;
-  margin: 0 auto;
-  font-weight: 500;
-  
-}
-
-
-@media screen and (max-width: 600px) {
-  .nav-brand {
-    font-size: 0.8rem;
-  }
-  #copyright {
-    margin-top: 0.6rem;
-    font-size: 0.6rem;
-  }
-footer a {
-  font-size: 0.8rem;
-}
-}
 
 
