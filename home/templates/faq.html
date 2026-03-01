@@ -1,6 +1,23 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}FAQ · Mood Manager{% endblock %}
+
+{% block extra_head %}
+	<!-- SEO -->
+	<meta name="description" content="Frequently asked questions about Mood Manager's mood and stress predictions.">
+	
+	<!-- Open Graph (Social Media) -->
+	<meta property="og:title" content="FAQ - Mood Manager">
+	<meta property="og:description" content="Frequently asked questions about Mood Manager's mood and stress predictions.">
+  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/mood_manager_banner.png' %}">
+	<meta property="og:url" content="{{ request.build_absolute_uri }}">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Mood Manager">
+	
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+{% endblock %}
 
 {% block content %}
 <div class="row justify-content-center">
