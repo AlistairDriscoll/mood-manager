@@ -8,15 +8,46 @@
   An interactive predictive web application exploring how lifestyle factors influence mood and stress levels.
 </p>
 
-An interactive predictive web application exploring how lifestyle factors influence mood and stress levels.
+<br/>
 
+<details>
+<summary align="center">Table of contents (Click to show)</summary>
+
+<br/>
+
+- [Overview](#overview)
+- [Dataset](#dataset)
+- [Problem](#problem)
+- [Solution](#solution)
+- [Input Variables](#input-variables)
+- [Scoring Logic](#scoring-logic)
+- [Features](#features)
+- [How it Works](#how-it-works)
+- [UI Design & Responsiveness](#ui-design-and-responsiveness)
+- [Responsiveness](#responsiveness)
+- [Technical Architecture](#technical-architecture)
+- [Project Structure](#project-structure)
+- [Installation (locally)](#installation-locally)
+- [Deployment](#deployment)
+- [Ethical Considerations](#ethical-considerations)
+- [Future Improvements](#future-improvements)
+- [Testing](#testing)
+- [Contributors](#contributors)
+- [Acknowledgements](#acknowledgements)
+
+---
+
+</details>
+
+<br/>
+<br/>
 
 ## Overview
 
 **Mood Manager** is a predictive web application that analyzes user-selected lifestyle variables and generates:
 
-- **Predicted Mood score (0–10)**
-- **Predicted Stress score (0–10)**
+- **Predicted Mood score (1–10)**
+- **Predicted Stress score (1–10)**
 
 Users adjust on-screen slider controls to simulate behavioural scenarios. Each variable begins at a neutral midpoint and can be increased or decreased to reflect different habits or conditions.
 
@@ -58,7 +89,7 @@ The predictive model evaluates the following factors:
 - Diet quality
 - Weather
 
-These variables are weighted within a structured scoring framework to calculate mood and stress predictions.
+A predictive model using linear regression was created that used these features as inputs and predicted a mood score and stress level.
 
 ## Scoring Logic
 
@@ -70,17 +101,19 @@ Each input variable contributes positively or negatively to Mood and Stress scor
 
 Mood and Stress are calculated independently, allowing certain factors to impact stress more heavily than mood.
 
-The final outputs are normalized to a 0–10 scale to provide clear, interpretable results.
+The final outputs are normalized to a 1–10 scale to provide clear, interpretable results.
 
 The logic is modular, allowing future integration of machine learning models or adaptive weighting mechanisms.
 
-## Features - 🚧 TODO - add features of rest of the site
+## Features
 
+- Linear Regression models to predict stress level and mood score
 - Interactive slider-based input system
 - Real-time mood and stress prediction
 - Immediate results display
 - Colour-coded feedback system
 - Clean, responsive user interface
+- Helpful information on how to improve mood or lower stress
 - Modular architecture for future expansion
 
 ## How It Works
@@ -124,7 +157,7 @@ Layouts adapt seamlessly across:
 The input sliders, buttons, and results panels resize dynamically.
 No functionality is lost on smaller screens, ensuring the simulation is usable across devices.
 
-## Technical Architecture - 🚧 TODO - check if correct items listed
+## Technical Architecture
 
 ### Backend
 
@@ -305,7 +338,7 @@ Future production implementations should include secure authentication, encrypte
 - User authentication and profile management
 - API endpoint for external integrations
 
-## Testing - 🚧 TODO - more testing, edit results
+## Testing
 
 > Testing performed manually by all team members across multiple devices and browsers.
 
@@ -317,13 +350,13 @@ Testing focused on ensuring that user inputs are processed correctly, outputs ar
 - **Cross-browser / device checks:** Ensured layout and responsiveness work on desktop, tablet, and mobile screens.
 - **Future testing plans:** Unit and integration tests can be added to automate validation as the project evolves.
 
-## Contributors - 🚧 TODO - add names, edit list
+## Contributors
 
 - Alistair Driscoll - [https://www.linkedin.com/in/alistair-driscoll/](https://www.linkedin.com/in/alistair-driscoll/)
 - Anthony Radose - [https://www.linkedin.com/in/anthony-radose-35a969236/](https://www.linkedin.com/in/anthony-radose-35a969236/)
 - Pete Smith - [https://www.linkedin.com/in/petedanielsmith/](https://www.linkedin.com/in/petedanielsmith/)
 
-## Acknowledgements - 🚧 TODO - edit
+## Acknowledgements
 
 - **Dataset source:** [Kaggle – Lifestyle Factors Dataset](https://www.kaggle.com) (2,000 records used to train the model)
 - **AI assistance:** ChatGPT, for helping with README drafting, structure, and content refinement
@@ -339,6 +372,3 @@ This section recognises resources, inspiration, and tools that contributed to th
 - Python Official Documentation
 - Hackathon Organisers
 
-## License
-
-Specify license here (e.g., MIT License).
