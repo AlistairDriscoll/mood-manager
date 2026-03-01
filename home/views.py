@@ -15,6 +15,8 @@ def index(request):
 def predict_view(request):
     mood_pred = None
     stress_pred = None
+    mood_tips = None
+    stress_tips = None
 
     if request.method == "POST":
         form = PredictionForm(request.POST)
@@ -26,13 +28,6 @@ def predict_view(request):
             mood_tips = mood_suggestions(form.cleaned_data)
             stress_tips = stress_suggestions(form.cleaned_data)
 
-            request.session["last_prediction"] = {
-                "inputs": form.cleaned_data,
-                "preds": preds,
-                "mood_tips": mood_tips,
-                "stress_tips": stress_tips,
-            }
-
     else:
         form = PredictionForm()
 
@@ -43,6 +38,8 @@ def predict_view(request):
             "form": form,
             "mood_pred": mood_pred,
             "stress_pred": stress_pred,
+            "mood_tips": mood_tips,
+            "stress_tips": stress_tips,
         },
     )
 
