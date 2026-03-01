@@ -1,13 +1,6 @@
-<p align="center">
-  <img src="./static/images/mood_manager_banner.png" width="90%"  alt="Project banner" />
-</p>
+# Mood Manager
 
-<h1 align="center">Mood Manager</h1>
-
-<p align="center">
-  An interactive predictive web application exploring how lifestyle factors influence mood and stress levels.
-</p>
-
+An interactive predictive web application exploring how lifestyle factors influence mood and stress levels.
 
 ## Overview
 
@@ -58,7 +51,7 @@ The predictive model evaluates the following factors:
 
 These variables are weighted within a structured scoring framework to calculate mood and stress predictions.
 
-## Scoring Logic 🚧 TODO - at the moment some logic not working, lack of sleep didn't affect mood, Rosalie noted and I tested,
+## Scoring Logic 🚧 TODO - at the moment some logic not working, lack of sleep didn't affect mood, Rosalie noted and I tested
 
 > Note: The scoring system is based on the Kaggle dataset’s variable distributions. Some extreme combinations (e.g., zero sleep) may not produce intuitively expected results due to dataset limitations.
 
@@ -110,14 +103,14 @@ Colour-coded results:
 
 ## Responsiveness - 🚧 TODO - check, is it mobile first approach, is it bootstrap grid? test again
 
-The application is designed mobile-first using the Bootstrap grid system.  
+The application is designed mobile-first using the Bootstrap grid system.
 Layouts adapt seamlessly across:
 
 - **Desktop** – full-width charts and controls
 - **Tablet** – stacked elements with preserved spacing
 - **Mobile** – single-column layout for easy touch interaction
 
-The input sliders, buttons, and results panels resize dynamically.  
+The input sliders, buttons, and results panels resize dynamically.
 No functionality is lost on smaller screens, ensuring the simulation is usable across devices.
 
 ## Technical Architecture - 🚧 TODO - check if correct items listed
