@@ -51,7 +51,7 @@ The predictive model evaluates the following factors:
 
 These variables are weighted within a structured scoring framework to calculate mood and stress predictions.
 
-## Scoring Logic 🚧 TODO - at the moment some logic not working, lack of sleep didn't affect mood, Rosalie noted and I tested
+## Scoring Logic
 
 > Note: The scoring system is based on the Kaggle dataset’s variable distributions. Some extreme combinations (e.g., zero sleep) may not produce intuitively expected results due to dataset limitations.
 
@@ -81,7 +81,7 @@ The logic is modular, allowing future integration of machine learning models or 
 3. Weighted scoring logic calculates Mood and Stress values
 4. Results are displayed instantly with visual feedback
 
-## UI Design and Responsiveness - 🚧 TODO - adjust for colours actually used, is it mobile first approach?
+## UI Design and Responsiveness
 
 The interface follows a mobile-first design approach using the Bootstrap grid system.
 
@@ -101,7 +101,7 @@ Colour-coded results:
 - **Red:** Low mood / high stress
 - **Yellow/Orange:** Intermediate states
 
-## Responsiveness - 🚧 TODO - check, is it mobile first approach, is it bootstrap grid? test again
+## Responsiveness
 
 The application is designed mobile-first using the Bootstrap grid system.
 Layouts adapt seamlessly across:
@@ -132,33 +132,119 @@ No functionality is lost on smaller screens, ensuring the simulation is usable a
 - SQLite (development)
 - PostgreSQL (production-ready)
 
-## Project Structure 🚧 TODO - check if correct items listed
+## Project Structure
 
 ```text
-mood/
+├── README.md
+├── __pycache__
+│   └── env.cpython-312.pyc
+├── charts
+│   ├── correlation_matrix_heatmap.png
+│   ├── distribution_of_categorical_columns_count_plots.png
+│   ├── distribution_of_numerical_columns_histogram.png
+│   ├── distribution_of_numerical_columns_violin_box_plots.png
+│   ├── predicting_mood_score_linear_regression_residuals.png
+│   ├── predicting_mood_score_linear_regression_scatter.png
+│   ├── predicting_stress_level_linear_regression_residuals.png
+│   └── predicting_stress_level_linear_regression_scatter.png
+├── data_files
+│   ├── mental_health_dataset_cleaned.parquet
+│   └── mental_health_dataset_raw.csv
+├── db.sqlite3
+├── env.py
+├── home
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── admin.cpython-312.pyc
+│   │   ├── apps.cpython-312.pyc
+│   │   ├── forms.cpython-312.pyc
+│   │   ├── models.cpython-312.pyc
+│   │   ├── suggestions.cpython-312.pyc
+│   │   ├── urls.cpython-312.pyc
+│   │   └── views.cpython-312.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── migrations
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── models.py
+│   ├── suggestions.py
+│   ├── templates
+│   │   ├── contact.html
+│   │   ├── faq.html
+│   │   ├── home
+│   │   ├── improve_mood.html
+│   │   ├── predict.html
+│   │   └── reduce_stress.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── jupyter_notebooks
+│   ├── 01_clean_the_data.ipynb
+│   ├── 02_predicting_mood_score.ipynb
+│   └── 03_predicting_stress_level.ipynb
 ├── manage.py
-├── mood_project/
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-├── dashboard/
-│   ├── templates/
-│   ├── static/
-│   ├── views.py
-│   ├── models.py
-│   ├── forms.py
-│   └── urls.py
+├── ml_models
+│   ├── __pycache__
+│   │   └── predict.cpython-312.pyc
+│   ├── predict.py
+│   ├── predicting_mood_score_linear_regression_model.pkl
+│   └── predicting_stress_level_linear_regression_model.pkl
+├── mood_manager
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── settings.cpython-312.pyc
+│   │   ├── urls.cpython-312.pyc
+│   │   └── wsgi.cpython-312.pyc
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
 ├── requirements.txt
-└── README.md
+├── static
+│   ├── css
+│   │   └── main.css
+│   ├── favicons
+│   │   ├── apple-touch-icon.png
+│   │   ├── favicon-96x96.png
+│   │   ├── favicon.ico
+│   │   ├── favicon.svg
+│   │   ├── site.webmanifest
+│   │   ├── web-app-manifest-192x192.png
+│   │   └── web-app-manifest-512x512.png
+│   ├── images
+│   │   ├── correlation_matrix_heatmap.png
+│   │   ├── distribution_of_categorical_columns_count_plots.png
+│   │   ├── distribution_of_numerical_columns_histogram.png
+│   │   ├── distribution_of_numerical_columns_violin_box_plots.png
+│   │   ├── mood_manager_banner.png
+│   │   ├── predicting_mood_score_linear_regression_scatter.png
+│   │   └── predicting_stress_level_linear_regression_scatter.png
+│   └── videos
+│       └── sunset.mp4
+├── structure.txt
+└── templates
+    └── base.html
 ```
 
-## Installation 🚧 TODO - check if correct items listed
+## Installation (locally)
 
 Clone the repository:
 
 ```bash
 git clone https://github.com/yourusername/mood-manager.git
 cd mood-manager
+```
+
+Add the right env variables in an env.py file:
+
+```python
+import os
+
+os.environ["SECRET_KEY"] = "<YOUR-SECRET-KEY>"
 ```
 
 Create a virtual environment:
@@ -182,9 +268,9 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-## Deployment 🚧 TODO - check if correct items listed
+## Deployment
 
-Deployed via Render / Heroku / other hosting platform.
+Deployed via Render
 
 Environment variables required:
 
@@ -192,7 +278,7 @@ Environment variables required:
 - DEBUG
 - DATABASE_URL (if using PostgreSQL)
 
-## Ethical Considerations - 🚧 TODO - check if correct items listed
+## Ethical Considerations
 
 This application provides predictive indicators and does not offer medical or psychological diagnoses.
 
@@ -200,8 +286,9 @@ User inputs are not stored, and the tool is designed for exploratory purposes on
 
 Future production implementations should include secure authentication, encrypted data handling, and a clear privacy policy.
 
-## Future Improvements - 🚧 TODO - check if correct items listed, other ideas
+## Future Improvements
 
+- A bigger bank of tips for the user
 - Machine learning-based predictive model
 - Historical tracking and visual dashboards
 - Personalised behavioural recommendations
