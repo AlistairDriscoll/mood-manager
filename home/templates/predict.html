@@ -64,7 +64,7 @@
           <div class="card-body">
             <h2 class="h5 mb-3">Results</h2>
 
-            <div class="row g-3">
+            <div class="row g-3 mx-1">
               <div class="col-md-6">
                 <div class="p-3 rounded border">
                   <div class="text-muted">Predicted Mood</div>
@@ -92,6 +92,35 @@
           </div>
         </div>
       </div>
+
+      <div class="col-lg-8 mt-4">
+        <div class="card shadow-sm">
+          <div class="card-body px-4">
+            <h2 class="h5 mb-3">Tips</h2>
+
+            <div class="row g-3 mx-1">
+              <div class="mb-1 p-3 rounded border">
+                <h5 class="h6 mb-2">Mood Improvement Tips</h5>
+                <ul>
+                  {% for tip in mood_tips %}
+                      <li>{{ tip }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+
+              <div class="p-3 rounded border">
+                <h5 class="h6 mb-2">Stress Reduction Tips</h5>
+                <ul>
+                  {% for tip in stress_tips %}
+                      <li>{{ tip }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {% endif %}
       <!-- More Info Button -->
       <div class="mt-4 mb-5 text-center">

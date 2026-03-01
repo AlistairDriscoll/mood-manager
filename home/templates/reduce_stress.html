@@ -20,17 +20,6 @@
 {% block title %}Reduce My Stress{% endblock %}
 
 {% block content %}
-<h1>How To Reduce Your Stress!</h1>
-
-{% if request.session.last_prediction %}
-{% for tip in request.session.last_prediction.stress_tips %}
-<p>{{ tip }}</p>
-{% endfor %}
-{% else %}
-<p>You haven't had your stress score predicted yet! Click the <a href="{% url 'predict' %}">predict mood</a> button to so so.
-</p>
-{% endif %}
-
 
 <div class="row justify-content-center mb-5">
   <div class="col-lg-9">
